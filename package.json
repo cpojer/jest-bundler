@@ -1,0 +1,14 @@
+{
+  "name": "jest-bundler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
+    "chalk": "^4.1.1",
+    "jest-haste-map": "^27.0.0",
+    "jest-resolve": "^27.0.0",
+    "yargs": "^17.0.1"
+  }
+}
