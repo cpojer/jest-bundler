@@ -10,14 +10,16 @@ import yargs from 'yargs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), 'product');
 
-const hasteMap = new JestHasteMap.default({
+const hasteMapOptions = {
   extensions: ['js'],
   maxWorkers: cpus().length,
   name: 'jest-bundler',
   platforms: [],
   rootDir: root,
   roots: [root],
-});
+};
+const hasteMap = new JestHasteMap.default(hasteMapOptions);
+await hasteMap.setupCachePath(hasteMapOptions);
 const {hasteFS, moduleMap} = await hasteMap.build();
 
 const options = yargs(process.argv).argv;
